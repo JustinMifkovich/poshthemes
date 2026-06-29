@@ -1,22 +1,37 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-    "white": "#CED0D6",
-    "bg": "#1E1F22",
-    "purple": "#BA8EF7",
-    "plum": "#9A348E",
-    "pink": "#FF8AD1",
-    "orange": "#FFA763",
-    "yellow": "#DCDCAA",
-    "teal": "#56ADB7",
-    "blue": "#548AF7",
-    "muted": "#6F737A",
-    "green": "#7EC482"
+    "white":     "#CED0D6",
+    "bg":        "#1E1F22",
+    "purple":    "#BA8EF7",
+    "plum":      "#9A348E",
+    "pink":      "#FF8AD1",
+    "orange":    "#FFA763",
+    "yellow":    "#DCDCAA",
+    "teal":      "#56ADB7",
+    "blue":      "#548AF7",
+    "muted":     "#6F737A",
+    "green":     "#7EC482"
   },
   "blocks": [
     {
-      "alignment": "right",
+      "alignment": "left",
       "segments": [
+ /*       {
+          "type": "aws",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "foreground": "p:bg",
+          "background": "p:blue",
+          "template": " \ue7ad {{ if .Profile }}{{ .Profile }}{{ end }} ",
+          "properties": {
+            "display_profile": true,
+            "display_region": false,
+            "display_default_region": false,
+            "display_account": false
+          }
+        },  
+*/
         {
           "type": "text",
           "style": "powerline",
@@ -42,7 +57,7 @@
           "template": "{{ if or .Env.PNPPSSITE .Env.PNPPSHOST }}\u00A0{{ end }}"
         }
       ],
-      "type": "prompt"
+      "type": "rprompt"
     },
     {
       "alignment": "left",
@@ -50,8 +65,8 @@
         {
           "background": "p:purple",
           "foreground": "p:bg",
-          "leading_diamond": "\ue0b2",
           "powerline_symbol": "\ue0b4",
+          "leading_diamond": "\ue0b2",
           "style": "diamond",
           "template": "{{.Icon}} ",
           "type": "os"
@@ -59,8 +74,8 @@
         {
           "background": "p:purple",
           "foreground": "p:bg",
-          "style": "powerline",
-          "powerline_symbol": "\ue0b0",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
           "template": "{{ .UserName }} ",
           "type": "session"
         },
@@ -99,26 +114,13 @@
         {
           "background": "p:yellow",
           "foreground": "p:bg",
-          "trailing_diamond": "\ue0b4",
-          "style": "diamond",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
           "template": " \ue235 {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }} ",
           "type": "python",
           "properties": {
             "always_enabled": true
           }
-        }
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "left",
-      "newline": true,
-      "segments": [
-        {
-          "foreground": "p:purple",
-          "style": "plain",
-          "template": "❯ ",
-          "type": "text"
         }
       ],
       "type": "prompt"
